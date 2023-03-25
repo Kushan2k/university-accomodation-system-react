@@ -1,0 +1,31 @@
+.navbar-top{
+  height: 80px;
+}
+
+.menu{
+  height: 300px;
+  margin-top: 85px;
+
+  top: 60%;  
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  transition: 400ms linear;
+  animation-name: slide-down;
+  animation-duration: 0.4s;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes slide-down {
+
+  from{
+    height: 0px;
+    opacity: 0.5;
+  }
+  to{
+    height: 300px;
+    opacity: 1;
+  }
+  
+}
