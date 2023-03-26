@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 function Nav() {
@@ -22,7 +23,7 @@ function Nav() {
 
       {isopen && (
         <div className="menu position-absolute bg-dark w-75 align-self-center">
-          
+          <Link to={'/register'} className='text-white mt-5'>Register</Link>
         </div>
       )}
 

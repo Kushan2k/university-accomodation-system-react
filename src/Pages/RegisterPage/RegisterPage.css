@@ -1,0 +1,26 @@
+.side-img{
+  object-fit: fill;
+  width: 100%;
+}
+small.text-danger{
+  font-size: 0.9rem;
+}
+
+input.form-control{
+  border: 0.6px solid lightskyblue;
+  border-radius: 0;
+
+}
+
+input.form-control:focus{
+  box-shadow: none;
+  border: 2px solid lightskyblue;
+}
+
+input.btn{
+  border-radius: 0;
+  transition: 400ms linear;
+}
+input.btn.btn-outline-success:hover{
+  background-color: rgb(30, 128, 30);
+}
