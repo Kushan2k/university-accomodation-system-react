@@ -3,12 +3,9 @@
 }
 
 .menu{
-  height: 300px;
-  margin-top: 85px;
+  background-color: white;
+  border-top: 3px solid black;
 
-  top: 60%;  
-  left: 50%; 
-  transform: translate(-50%, -50%);
   transition: 400ms linear;
   animation-name: slide-down;
   animation-duration: 0.4s;
@@ -20,12 +17,63 @@
 @keyframes slide-down {
 
   from{
-    height: 0px;
+    transform: translateY(-50%);
     opacity: 0.5;
   }
   to{
-    height: 300px;
+    transform: translateY(0);
     opacity: 1;
   }
   
+}
+.nav-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+.nav-item-collapse{
+  transition: 300ms linear;
+  background-color: white;
+  margin: 0 10px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  animation-name: slide-downsub;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+.nav-item-collapse>ul{
+  list-style: none;
+  width: 100%;
+}
+.nav-item-collapse>ul>li{
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 0.2px solid rgb(208, 208, 208);
+  width: 100%;
+}
+@keyframes slide-downsub {
+  from{
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  color: black !important;
+  
+
+}
+.nav-link:hover{
+  text-decoration: underline;
+  background-color: ghostwhite;
 }
