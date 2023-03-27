@@ -16,7 +16,9 @@ export default function Main() {
             We Welcome you
           </h2>
           {/* <Link href="#" className='btn'>Take a tour</Link> */}
-          <button className='my-btn'>Take a  tour</button>
+          <button className='my-btn' style={{
+            zIndex:100
+          }}>Take a  tour</button>
           
         </div>
       </div>

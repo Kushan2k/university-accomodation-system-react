@@ -4,6 +4,7 @@ import './RegisterPage.css'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebaseConfig'
+import { Link } from 'react-router-dom'
 
 export default function RegisterPage() {
   const navigation = useNavigate()
@@ -126,6 +127,9 @@ export default function RegisterPage() {
               }} value="Reset" className='btn btn-outline-dark w-100 my-2' />
             </div>
           </form>
+          <p>
+            Already have an account? login <Link to={'/login'}>Here</Link>
+          </p>
         </div>
       </div>
     </div>

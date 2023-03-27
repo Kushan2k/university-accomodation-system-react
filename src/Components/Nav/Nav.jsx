@@ -1,25 +1,34 @@
-import { useState ,useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { useState ,useEffect, useRef} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { isLoggedin } from '../../utils'
 import './Nav.css'
+import { signOut } from 'firebase/auth'
+import {auth}from '../../firebaseConfig'
 
 function Nav() {
 
   const [loggedin, setLoggedin] = useState(false)
   const [isSubMenuOpen,setIsSubMenuOpen]=useState(false)
-  const [isSubMenuOpen2,setIsSubMenuOpen2]=useState(false)
+  const [isSubMenuOpen2, setIsSubMenuOpen2] = useState(false)
+  const naviagte = useNavigate()
   
   useEffect(() => {
     if (isLoggedin()) {
       setLoggedin(true)
     }
-  }, [])
+  }, [naviagte])
 
   function opensub() {
     setIsSubMenuOpen(!isSubMenuOpen)
   }
   function opensub2() {
     setIsSubMenuOpen2(!isSubMenuOpen2)
+  }
+
+  function logout() {
+    signOut(auth)
+    localStorage.removeItem('user')
+    naviagte('/login')
   }
   
 
@@ -28,6 +37,7 @@ function Nav() {
   function click() {
     setOpen(!isopen)
     setIsSubMenuOpen(false)
+    setIsSubMenuOpen2(false)
   }
   return (
     <>
@@ -42,14 +52,14 @@ function Nav() {
           </button>
         </div>
 
-        
-
-        
-
-
       </div>
       {isopen && (
-          <div className="container menu w-75 d-flex p-5 flex-column">
+        <div  className="container position-relative menu w-75 d-flex p-5 flex-column">
+          <div className="cls-btn position-absolute">
+            <button onClick={click} className='btn btn-outline-light btn-sm border-o'>
+              <img width={30} height={30} src="https://static.thenounproject.com/png/2130287-200.png" alt="cls" />
+            </button>
+          </div>
             {!loggedin && (
               <>
                 <div className="nav-item">
@@ -94,7 +104,12 @@ function Nav() {
                   <li>test 05</li>
                 </ul>
               </div>
-            )}
+          )}
+          {loggedin && (
+            <div className="nav-item">
+              <Link className='nav-link' onClick={logout}>Logout</Link>
+            </div>
+          )}
             
             
           </div>

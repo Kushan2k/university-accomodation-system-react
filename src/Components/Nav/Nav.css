@@ -77,3 +77,8 @@
   text-decoration: underline;
   background-color: ghostwhite;
 }
+
+.cls-btn{
+  right: 0;
+  top: 10px;
+}

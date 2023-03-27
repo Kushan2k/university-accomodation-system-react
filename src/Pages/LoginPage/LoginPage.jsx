@@ -1,20 +1,13 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './LoginPage.css'
 import { auth } from '../../firebaseConfig'
 import {signInWithEmailAndPassword} from 'firebase/auth'
 
 function LoginPage() {
-
-  setInterval(() => {
-    setError('')
-    setErros({
-      empty:'',
-    })
-    
-  },3000)
   const navigate = useNavigate()
-  const [error,setError]=useState('')
+  const [error, setError] = useState('')
+  const [isloading,setIsloading]=useState(false)
   
   const [inputs, setInputs] = useState({
     email: '',
@@ -32,19 +25,26 @@ function LoginPage() {
 
   function login(e) {
     e.preventDefault()
+    e.target.sbbtn.setAttribute('disabled',true)
+    setIsloading(true)
     if (inputs.password.length === 0 || !inputs.password) {
       setErros({
         empty:'Required!'
       })
+      setIsloading(false)
+      e.target.sbbtn.removeAttribute('disabled')
       return
     }
+    
     signInWithEmailAndPassword(auth, inputs.email, inputs.password)
       .then(cred => {
         const user = cred.user
         localStorage.setItem('user', JSON.stringify(user))
         navigate("/")
       }).catch(error => {
+        setIsloading(false)
         setError(error.message)
+        e.target.sbbtn.removeAttribute('disabled')
     })
 
     
@@ -57,7 +57,7 @@ function LoginPage() {
     <div className="container mt-5">
       <p className="text-center text-danger">{ error}</p>
       <div className="row">
-        <div className="col-12 col-lg-6 mx-auto">
+        <div className="col-10 col-lg-6 mx-auto">
           <form onSubmit={login}>
             <div className="form-group my-3">
               <label htmlFor="email" className="form-label">Email</label>
@@ -78,9 +78,18 @@ function LoginPage() {
               <small className='text-danger'>{ errors.empty}</small>
             </div>
             <div className="form-group my-2">
-              <input type="submit" value="Login" className='btn btn-outline-success mb-2' />
+              <button type="submit" name='sbbtn' className='btn btn-outline-success mb-2'>
+                {
+                  isloading && <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                
+                }
+                  Login
+              </button>
             </div>
           </form>
+          <p>
+            New here? you can register <Link to={'/register'}>here</Link>
+          </p>
         </div>
       </div>
     </div>
