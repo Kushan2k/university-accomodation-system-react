@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 
 export default function RegisterPage() {
   const navigation = useNavigate()
+  const [loading,setLoading]=useState(false)
   const [crateError,setCrateError]=useState('')
   setTimeout(() => {
     setErros({
@@ -42,26 +43,36 @@ export default function RegisterPage() {
 
   function submit(e) {
     e.preventDefault()
+    e.target.regbtn.setAttribute('disabled', true)
+    setLoading(true)
 
     if (inputs.password.length === 0 || inputs.confirmPassword.length === 0 || inputs.name.length === 0) {
       setErros({
         ...errors,empty:'Required!'
       })
+      setLoading(false)
+      e.target.regbtn.removeAttribute('disabled')
+      return
     }
 
     if (inputs.password !== inputs.confirmPassword) {
       setErros({
         ...errors,doNotMatch:'Password do not match!'
       })
+      setLoading(false)
+      e.target.regbtn.removeAttribute('disabled')
       return
     }
 
     createUserWithEmailAndPassword(auth, inputs.email, inputs.password).then((credentials) => {
       navigation('/login')
+      setLoading(false)
       
     }).catch((error) => {
       setCrateError(error.message)
       clearnInputs()
+      setLoading(false)
+      e.target.regbtn.removeAttribute('disabled')
     })
 
     
@@ -121,7 +132,13 @@ export default function RegisterPage() {
             </div>
 
             <div className="form-group my-4 mx-auto">
-              <input type="submit" value="Register" className='btn btn-outline-success w-100 ' />
+              <button type="submit" name='regbtn' className='btn btn-outline-success w-100 '>
+                 {
+                  loading && <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                
+                }
+                Register
+                </button>
               <input type="reset" onClick={() => {
                 clearnInputs()
               }} value="Reset" className='btn btn-outline-dark w-100 my-2' />

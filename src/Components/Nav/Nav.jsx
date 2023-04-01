@@ -29,6 +29,7 @@ function Nav() {
     signOut(auth)
     localStorage.removeItem('user')
     naviagte('/login')
+    setLoggedin(false)
   }
   
 
