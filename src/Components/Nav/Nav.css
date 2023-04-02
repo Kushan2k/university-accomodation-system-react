@@ -82,3 +82,7 @@
   right: 0;
   top: 10px;
 }
+.nav-item-collapse>ul>li:hover{
+  cursor: pointer;
+  color: black;
+}

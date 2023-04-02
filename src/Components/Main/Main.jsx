@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+
+import FlipBox from '../FlipBox/FlipBox';
 import './Main.css'
 import { TypeAnimation } from 'react-type-animation';
 
@@ -98,6 +99,67 @@ export default function Main() {
         <div className="col-12  colored-box col-md-6 m-0 p-0 bg-dark overflow-hidden" >
           <img className='box-4-img' src="https://media.istockphoto.com/id/866754354/photo/different-lifestyles-concept.jpg?s=170667a&w=0&k=20&c=DpK6y3Y0WJV6wMdU25mZ-A2Hl6_X0UfN4qx5WnGULAM=" alt="bg" />
         </div>
+      </div>
+
+      <div id='features-box' className="row m-0 p-0 position-relative overflow-hidden">
+        <img className='bg-img-row p-0 m-0' src="https://media.istockphoto.com/id/1224388366/vector/colorful-geometric-background.jpg?s=612x612&w=0&k=20&c=0MH3nZPyJnqL41pnXHnejHlUqFBPmVVKt8dCl9tbaOs=" alt="bg" />
+        <div className="d-none d-lg-flex col-lg-6 mx-auto position-relative">
+          <img src="https://www.pngall.com/wp-content/uploads/8/Young-Man-PNG-Free-Image.png" alt="man" />
+        </div>
+        <div className="col-12 col-lg-6 mx-auto justify-content-center align-items-center">
+          <h1 className="text-center text-big mt-5 mt-mg-2">Come & Stay here.</h1>
+          <div className="mx-auto d-flex">
+            <ul className='features-box'>
+              <li>
+                <h3>24/7 Support</h3>
+                <div className="rounded-circle bg-success">
+
+                </div>
+              </li>
+              <li>
+                <h3>
+                  Location
+                </h3>
+                <div className="rounded-circle bg-success">
+
+                </div>
+              </li>
+              <li>
+                <h3>  
+                  Security
+                </h3>
+                <div className="rounded-circle bg-success">
+
+                </div>
+              </li>
+              <li>
+                <h3> 
+                  Facilities
+                </h3>
+                <div className="rounded-circle bg-success">
+
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="row m-0 p-0 small-box-container position-relative overflow-hidden">
+        <img src="https://media.istockphoto.com/id/1204292203/photo/multi-ethnic-young-adults-around-the-fire-selfie-stock-photo.jpg?s=612x612&w=0&k=20&c=gIMK3EoidytABqLwpAFkkZLpd9Je453rrrCUBuGl6bg=" className='bg-img-row p-0 m-0' alt="bg" />
+        <div className="col-6 col-md-2  small-box bg-success">
+          <h1>We <br />Stand <br />For</h1>
+        </div>
+        <FlipBox title={'Communitas'} fontcolor={'#c6c3c7'} offset={8} bgColor={'#306135'} content={'We provide opportunities to support others both within the college community and the broader local, national and global community.'} />
+        
+        <FlipBox title={'Respect'} offset={2} fontcolor={'#343634'} bgColor={'#a9c7c3'} content={'We promote respect for self and others.'}/>
+        
+        <FlipBox title={'Belongings'} fontcolor={'#b8b8b8'} bgColor={'#f27f27'} content={'We cultivate an inclusive and supportive community where diversity and individuality are celebrated.'} />
+        
+        <FlipBox title={'Growth'} offset={2} fontcolor={'#f27f27'} bgColor={'#ddc1e3'} content={'We support students to find their passions, achieve their ambitions and pursue excellence through a growth and development mindset'}/>
+        
+        <FlipBox bgColor={'#87ab85'} fontcolor={'#055726'} offset={6} title={'Challenge'} content={'We provide a climate of openness that encourages genuine engagement, the expression of differing views and positive discourse.'} />
+        
       </div>
     </div>
   )
