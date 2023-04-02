@@ -161,6 +161,9 @@ export default function Main() {
         <FlipBox bgColor={'#87ab85'} fontcolor={'#055726'} offset={6} title={'Challenge'} content={'We provide a climate of openness that encourages genuine engagement, the expression of differing views and positive discourse.'} />
         
       </div>
+      <div className="row">
+        <h1 className="text-center text-dark mt-3">Don’t just live here, belong here.</h1>
+      </div>
     </div>
   )
 }
