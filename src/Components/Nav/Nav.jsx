@@ -73,7 +73,14 @@ function Nav() {
               </>
             )}
             <div className="nav-item">
-              <span className='nav-link'>More</span>
+              <Link className='nav-link' >In the loop</Link>
+            </div>
+            <div className="nav-item">
+              <Link className='nav-link' >Future Student</Link>
+            </div>
+            
+            <div className="nav-item">
+              <span className='nav-link'>Why Us</span>
               <button className='btn btn-outline-light btn-sm border-o ' onClick={opensub}>
                 <img width={15} height={15} src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="menu" className='border-0' />
               </button>
@@ -81,16 +88,16 @@ function Nav() {
             {isSubMenuOpen && (
               <div className="nav-item-collapse">
                 <ul>
-                  <li>test 01</li>
-                  <li>test 02</li>
-                  <li>test 03</li>
-                  <li>test 04</li>
-                  <li>test 05</li>
+                  <li>Our Facilities</li>
+                  <li>Your Room</li>
+                  <li>Your Community</li>
+                  <li>Extracurricular</li>
+                  <li>Thrive Here</li>
                 </ul>
               </div>
           )}
           <div className="nav-item">
-              <span className='nav-link'>More</span>
+              <span className='nav-link'>Our College</span>
               <button className='btn btn-outline-light btn-sm border-o ' onClick={opensub2}>
                 <img width={15} height={15} src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="menu" className='border-0' />
               </button>
@@ -98,11 +105,10 @@ function Nav() {
             {isSubMenuOpen2 && (
               <div className="nav-item-collapse">
                 <ul>
-                  <li>test 01</li>
-                  <li>test 02</li>
-                  <li>test 03</li>
-                  <li>test 04</li>
-                  <li>test 05</li>
+                  <li>About</li>
+                  <li>Our People</li>
+                  <li>Respectful Relationships</li>
+                  <li>Support us</li>
                 </ul>
               </div>
           )}
@@ -111,6 +117,9 @@ function Nav() {
               <Link className='nav-link' onClick={logout}>Logout</Link>
             </div>
           )}
+            <div className="nav-item">
+              <Link className='nav-link' >Want To Know More</Link>
+            </div>
             
             
           </div>
