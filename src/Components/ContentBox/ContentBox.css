@@ -1,0 +1,23 @@
+.sub{
+    font-weight: 600;
+    color: grey;
+    margin-top: 10px;
+}
+
+.heading-1{
+    border-radius: 11px;
+    padding: 10px;
+    border: 3px solid black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.list-item{
+    font-size: 1.17rem;
+    font-weight: 400;
+}
+.dis{
+    font-size: 1.2rem;
+    color: gray;
+}

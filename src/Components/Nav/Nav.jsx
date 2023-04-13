@@ -43,7 +43,7 @@ function Nav() {
   return (
     <>
       <div className='w-100 container-fluid navbar-top  d-flex justify-content-between align-content-center position-relative'>
-        <img src="https://arthotellagunabeach.com/wp-content/uploads/2021/12/Logo-art-hotel-laguna-Beach-og.png" alt="logo" />
+        <img src="../../Assets/logo.jpg" width={200} height={100} alt="logo" />
 
         
 

@@ -1,5 +1,7 @@
 
+import ContentBox from '../ContentBox/ContentBox';
 import FlipBox from '../FlipBox/FlipBox';
+import Footer from '../Footer/Footer';
 import './Main.css'
 import { TypeAnimation } from 'react-type-animation';
 
@@ -67,6 +69,7 @@ export default function Main() {
           backgroundColor:'#70b359'
         }}>
           <img className='w-75' src="https://media.istockphoto.com/id/579774164/photo/cheerful-group-of-friends.jpg?s=612x612&w=0&k=20&c=CWUpQIT9RbDEIesRTHQgUhAOFue-3UaFJm7p5r-GNEk=" alt="group" />
+          {/* <img className='w-75' src="../../Assets/Image/medical students.jpg" alt="group" /> */}
 
           <h1 className='text-white position-absolute overlay-text'>we provid <br/>the best stay</h1>
         </div>
@@ -150,20 +153,37 @@ export default function Main() {
         <div className="col-6 col-md-2  small-box bg-success">
           <h1>We <br />Stand <br />For</h1>
         </div>
-        <FlipBox title={'Communitas'} fontcolor={'#c6c3c7'} offset={8} bgColor={'#306135'} content={'We provide opportunities to support others both within the college community and the broader local, national and global community.'} />
+        <FlipBox title={'ILLNESS'} fontcolor={'#c6c3c7'} offset={8} bgColor={'#306135'} content={'Any significant illnesses should be informed to the warden/sub-warden and to the university medical officer as soon as possible'} />
         
-        <FlipBox title={'Respect'} offset={2} fontcolor={'#343634'} bgColor={'#a9c7c3'} content={'We promote respect for self and others.'}/>
+        <FlipBox title={'LIGHTS'} offset={2} fontcolor={'#343634'} bgColor={'#a9c7c3'} content={'Students should switch off the lights (and fans) when they leave their rooms and bathrooms except the common areas of the hostel.'}/>
         
-        <FlipBox title={'Belongings'} fontcolor={'#b8b8b8'} bgColor={'#f27f27'} content={'We cultivate an inclusive and supportive community where diversity and individuality are celebrated.'} />
+        <FlipBox title={'WASTE'} fontcolor={'#b8b8b8'} bgColor={'#f27f27'} content={'Rooms should be swept daily. All wastes including sanitary pads and left-over food should be disposed in appropriate bins kept for the specific purpose.'} />
         
-        <FlipBox title={'Growth'} offset={2} fontcolor={'#f27f27'} bgColor={'#ddc1e3'} content={'We support students to find their passions, achieve their ambitions and pursue excellence through a growth and development mindset'}/>
+        <FlipBox title={'NOISE POLLUTION'} offset={2} fontcolor={'#f27f27'} bgColor={'#ddc1e3'} 
+        content={`Students are expected to be attentive not to make any disturbance to others.
+
+Students should keep noise levels to a minimum at all times and no noice from 10.00 p.m. to 6.00 a.m.`}/>
         
-        <FlipBox bgColor={'#87ab85'} fontcolor={'#055726'} offset={6} title={'Challenge'} content={'We provide a climate of openness that encourages genuine engagement, the expression of differing views and positive discourse.'} />
+        <FlipBox bgColor={'#87ab85'} fontcolor={'#055726'} offset={6} title={'DAMAGES AND RECOVERY'} content={'Rough handling of dining hall/room furniture, any furniture, property or fittings of the hostel is strictly forbidden.'} />
         
       </div>
       <div className="row">
         <h1 className="text-center text-dark mt-3">Don’t just live here, belong here.</h1>
       </div>
+      <div className="row p-0 m-0">
+        <ContentBox title='First year room'
+        discriptiob='Most of our first years share a washroom with another first year. Called your ‘sinkie,’ this person may be your new best friend.'
+         list={['King single bed','Pillow','Study desk & chair','Bedside table or shelving']} />
+
+        <ContentBox title='Second year room'
+        discriptiob='No matter your year level, you won’t have to move out for mid-year!'
+         list={['Double/King single bed','Twin-share or private ensuite','Pillow','Study desk & chair','Bedside table or shelving']} />
+
+        <ContentBox title='Third year room'
+        discriptiob='College Leadership also has its perks, including tree-top views and you might even score a balcony!'
+         list={['Double bed with pillow','Private ensuite','Kitchenette','Study desk & chair','Bedside table & shelving']} />
+      </div>
+      <Footer/>
     </div>
   )
 }
