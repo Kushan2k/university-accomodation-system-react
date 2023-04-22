@@ -15,8 +15,9 @@ export default function Main() {
         <div className="col-12 col-md-6  border-1 d-flex  gap-4 flex-column justify-content-center align-items-center position-relative overflow-hidden">
           <img src="https://cdn3.vectorstock.com/i/1000x1000/11/77/abstract-background-design-vector-4351177.jpg" alt="bg" className='cover-bg' />
 
-          <h2 className="display-4 text-center m-5 m-md-2">
-            We Welcome you
+          <h2 className="display-5 text-center m-5 m-md-2">
+          Medical Students Accommodations <br />
+          WE OFFERED BEST CARRING FOR ACHIVEYOUR DERAMS 
           </h2>
           {/* <Link href="#" className='btn'>Take a tour</Link> */}
           <button className='my-btn' style={{

@@ -122,7 +122,7 @@ export default function RegisterPage() {
             </div>
 
             <div className="form-group my-4">
-              <label htmlFor="name" className="form-label">Name</label>
+              <label htmlFor="name" className="form-label">Full Name </label>
               <input
                 onChange={e => {
                 setInputs({ ...inputs, name: e.target.value })
@@ -130,6 +130,136 @@ export default function RegisterPage() {
                 type="text" autoComplete='off' value={inputs.name} className="form-control" placeholder='Name' />
               <small className=" text-danger">{ errors.empty}</small>
             </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'> Student Type</label>
+              <select name="" id="" className='form-control'>
+                <option value="">Local</option>
+                <option value="">Forign</option>
+              </select>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'>Date of Birth </label>
+              <input type="date" name="" id="" className='form-control' />
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'>Gender</label>
+              <select name="" id="" className='form-control'>
+                <option value="">Male</option>
+                <option value="">Female</option>
+              </select>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">National ID No</label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='National ID No' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">Permanent Address</label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Permanent Address' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">Near City</label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Near City' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">District</label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='District' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">Country</label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Country' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">Guardian Name </label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Guardian Name ' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">Address </label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Address ' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="name" className="form-label">Contact No </label>
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Home ' />
+              <input
+                
+                type="text" autoComplete='off'  className="form-control" placeholder='Personal ' />
+              <small className=" text-danger">{ errors.empty}</small>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'>Academic Year </label>
+              <select name="" id="" className='form-control'>
+                <option value="">1 year</option>
+                <option value="">2 year</option>
+                <option value="">3 year</option>
+                <option value="">4 year</option>
+                <option value="">5 year</option>
+                <option value="">6 year</option>
+                <option value="">Practical Year (Final)</option>
+              </select>
+            </div>
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'>Degree Program  </label>
+              <select name="" id="" className='form-control'>
+                <option value="">MBBS </option>
+                <option value="">Para Medicine</option>
+                
+              </select>
+            </div>
+
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'>Accommodation Request Period  </label>
+              <select name="" id="" className='form-control'>
+                <option value="">Less than 1 mounth </option>
+                <option value="">Less than 3 mounth</option>
+                <option value=""> 1 year</option>
+                <option value="">more than 1 year</option>
+                
+              </select>
+            </div>
+            <div className="form-group my-4">
+              <label htmlFor="" className='form-label'>Mention You have any disabilities or genetic diseases to need attention  </label>
+              <textarea name="" id="" cols="30" rows="5" className='form-control'></textarea>
+            </div>
+
+            
+
+
+
+
 
             <div className="form-group my-4 mx-auto">
               <button type="submit" name='regbtn' className='btn btn-outline-success w-100 '>

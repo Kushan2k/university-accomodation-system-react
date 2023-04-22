@@ -40,6 +40,7 @@ function Nav() {
     setIsSubMenuOpen(false)
     setIsSubMenuOpen2(false)
   }
+  
   return (
     <>
       <div className='w-100 container-fluid navbar-top  d-flex justify-content-between align-content-center position-relative'>
@@ -64,23 +65,24 @@ function Nav() {
             {!loggedin && (
               <>
                 <div className="nav-item">
-                  <Link to={'/register'} className='nav-link'>Register</Link>
+                  <Link to={'/register'} className='nav-link' onClick={click}>Register</Link>
 
                 </div>
                 <div className="nav-item">
-                  <Link to={'/login'} className='nav-link'>Login</Link>
+                  <Link to={'/login'} className='nav-link' onClick={click}>Login</Link>
                 </div>
               </>
             )}
             <div className="nav-item">
-              <Link className='nav-link' >In the loop</Link>
-            </div>
-            <div className="nav-item">
-              <Link className='nav-link' >Future Student</Link>
+              <Link className='nav-link' to={'/'} onClick={click} >Home</Link>
             </div>
             
             <div className="nav-item">
-              <span className='nav-link'>Why Us</span>
+              <Link className='nav-link' onClick={click} >Future Student</Link>
+            </div>
+            
+            <div className="nav-item">
+              <span className='nav-link'>Services</span>
               <button className='btn btn-outline-light btn-sm border-o ' onClick={opensub}>
                 <img width={15} height={15} src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="menu" className='border-0' />
               </button>
@@ -88,16 +90,19 @@ function Nav() {
             {isSubMenuOpen && (
               <div className="nav-item-collapse">
                 <ul>
-                  <li>Our Facilities</li>
-                  <li>Your Room</li>
-                  <li>Your Community</li>
-                  <li>Extracurricular</li>
-                  <li>Thrive Here</li>
+                  <li>Cleaning </li>
+                  <li>Medical service</li>
+                  <li>Clearance </li>
+                  <li>Near Locations </li>
+                  <li>Mentoring</li>
+                  <li>IN / OUT Request</li>
+                  <li>Notice Board </li>
+                  <li>Other facilities </li>
                 </ul>
               </div>
           )}
           <div className="nav-item">
-              <span className='nav-link'>Our College</span>
+              <span className='nav-link'>Accommodations </span>
               <button className='btn btn-outline-light btn-sm border-o ' onClick={opensub2}>
                 <img width={15} height={15} src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="menu" className='border-0' />
               </button>
@@ -105,20 +110,25 @@ function Nav() {
             {isSubMenuOpen2 && (
               <div className="nav-item-collapse">
                 <ul>
-                  <li>About</li>
-                  <li>Our People</li>
-                  <li>Respectful Relationships</li>
-                  <li>Support us</li>
+                  <li>Details </li>
+                  <li>Room Inquiries </li>
+                  
                 </ul>
               </div>
           )}
           {loggedin && (
+            <>
             <div className="nav-item">
               <Link className='nav-link' onClick={logout}>Logout</Link>
             </div>
-          )}
             <div className="nav-item">
-              <Link className='nav-link' >Want To Know More</Link>
+            <Link className='nav-link' onClick={click} > Payments</Link>
+          </div>
+          </>
+          )}
+            
+            <div className="nav-item">
+              <Link className='nav-link' onClick={click} >Contact Us </Link>
             </div>
             
             
