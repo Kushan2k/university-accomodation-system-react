@@ -8,7 +8,7 @@ function LoginPage() {
   const navigate = useNavigate()
   const [error, setError] = useState('')
   const [isloading,setIsloading]=useState(false)
-  
+  const [msgopen,setmsgopen]=useState(false)
   const [inputs, setInputs] = useState({
     email: '',
     password:''
@@ -38,9 +38,14 @@ function LoginPage() {
     
     signInWithEmailAndPassword(auth, inputs.email, inputs.password)
       .then(cred => {
+        setmsgopen(true)
         const user = cred.user
         localStorage.setItem('user', JSON.stringify(user))
-        navigate("/")
+        setInterval(() => {
+          setmsgopen(false)
+          navigate("/")
+        }, 2000);
+
       }).catch(error => {
         setIsloading(false)
         setError(error.message)
@@ -54,7 +59,16 @@ function LoginPage() {
   }
   
   return (
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
+
+      <img src="https://www.wrl.org/wp-content/uploads/2020/01/tax_aide_drowning_in_paperwork.jpg" alt="bg" className='bg-login' />
+      {
+          msgopen && (
+            <div className="container alert">
+              <p className="alert alert-success text-center display-6">Login completed</p>
+            </div>
+          )
+        }
       <p className="text-center text-danger">{ error}</p>
       <div className="row">
         <div className="col-10 col-lg-6 mx-auto">

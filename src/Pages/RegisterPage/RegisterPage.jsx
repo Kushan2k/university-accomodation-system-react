@@ -5,18 +5,20 @@ import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebaseConfig'
 import { Link } from 'react-router-dom'
+import Footer from '../../Components/Footer/Footer'
 
 export default function RegisterPage() {
   const navigation = useNavigate()
   const [loading,setLoading]=useState(false)
   const [crateError,setCrateError]=useState('')
-  setTimeout(() => {
-    setErros({
-      doNotMatch: '',
-      tooShort: '',
-      empty:''
-    })
-  }, 3000)
+  const [msgopen,setmsgopen]=useState(false)
+  // setTimeout(() => {
+  //   setErros({
+  //     doNotMatch: '',
+  //     tooShort: '',
+  //     empty:''
+  //   })
+  // }, 3000)
   
   function clearnInputs() {
     setInputs({
@@ -65,8 +67,13 @@ export default function RegisterPage() {
     }
 
     createUserWithEmailAndPassword(auth, inputs.email, inputs.password).then((credentials) => {
-      navigation('/login')
-      setLoading(false)
+      setmsgopen(true)
+      setInterval(() => {
+        setmsgopen(false)
+        setLoading(false)
+        navigation('/login')
+        
+      }, 2000);
       
     }).catch((error) => {
       setCrateError(error.message)
@@ -83,9 +90,16 @@ export default function RegisterPage() {
   
 
   return (
-    <div className="container">
+    <div className="container-fluid position-relative pt-5">
+      {/* <img src='https://fzengineering.com/app/uploads/2020/09/Career-List-Background.jpg' className='background-register' alt='bg' /> */}
       <div className="row m-0 p-0 mt-5">
-        
+        {
+          msgopen && (
+            <div className="container alert">
+              <p className="alert alert-success text-center display-6">Register completed</p>
+            </div>
+          )
+        }
         <div className="col-10 mx-auto col-lg-6">
           <p className="display-6 text-center">Register here</p>
           <p className='text-center text-danger'>{ crateError}</p>
@@ -263,7 +277,7 @@ export default function RegisterPage() {
 
             <div className="form-group my-4 mx-auto">
               <button type="submit" name='regbtn' className='btn btn-outline-success w-100 '>
-                 {
+                {
                   loading && <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
                 
                 }
@@ -279,6 +293,7 @@ export default function RegisterPage() {
           </p>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

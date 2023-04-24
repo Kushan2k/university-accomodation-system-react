@@ -5,6 +5,8 @@ import './Nav.css'
 import { signOut } from 'firebase/auth'
 import {auth}from '../../firebaseConfig'
 
+import img from '../../Assets/logo.jpg'
+
 function Nav() {
 
   const [loggedin, setLoggedin] = useState(false)
@@ -18,6 +20,7 @@ function Nav() {
     }
   }, [naviagte])
 
+  
   function opensub() {
     setIsSubMenuOpen(!isSubMenuOpen)
   }
@@ -43,8 +46,14 @@ function Nav() {
   
   return (
     <>
-      <div className='w-100 container-fluid navbar-top  d-flex justify-content-between align-content-center position-relative'>
-        <img src="../../Assets/logo.jpg" width={200} height={100} alt="logo" />
+      <div className='w-100 container-fluid navbar-top  d-flex justify-content-between align-content-center position-relative' style={{
+        borderBottomWidth:2,
+        borderBottomColor:'black',
+        borderBottomStyle:'solid',
+        marginBottom:1
+        
+      }}>
+        <img src={img} width={200} height={100} alt="logo" style={{zIndex:-100}} />
 
         
 
@@ -78,10 +87,16 @@ function Nav() {
             </div>
             
             <div className="nav-item">
-              <Link className='nav-link' onClick={click} >Future Student</Link>
+              <Link className='nav-link' to={'/future'} onClick={click} >Future Student</Link>
+            </div>
+            <div className="nav-item">
+              <Link className='nav-link' to={'/accomodation'} onClick={click} >Accommodations</Link>
+            </div>
+            <div className="nav-item">
+              <Link className='nav-link' to={'/service'} onClick={click} >Services</Link>
             </div>
             
-            <div className="nav-item">
+            {/* <div className="nav-item">
               <span className='nav-link'>Services</span>
               <button className='btn btn-outline-light btn-sm border-o ' onClick={opensub}>
                 <img width={15} height={15} src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="menu" className='border-0' />
@@ -100,8 +115,8 @@ function Nav() {
                   <li>Other facilities </li>
                 </ul>
               </div>
-          )}
-          <div className="nav-item">
+          )} */}
+          {/* <div className="nav-item">
               <span className='nav-link'>Accommodations </span>
               <button className='btn btn-outline-light btn-sm border-o ' onClick={opensub2}>
                 <img width={15} height={15} src="https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png" alt="menu" className='border-0' />
@@ -115,7 +130,7 @@ function Nav() {
                   
                 </ul>
               </div>
-          )}
+          )} */}
           {loggedin && (
             <>
             <div className="nav-item">
@@ -128,7 +143,7 @@ function Nav() {
           )}
             
             <div className="nav-item">
-              <Link className='nav-link' onClick={click} >Contact Us </Link>
+              <Link className='nav-link' onClick={click} to={'/contact'} >Contact Us </Link>
             </div>
             
             

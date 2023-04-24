@@ -20,3 +20,14 @@ input.btn{
 input.btn.btn-outline-success:hover{
   background-color: rgb(30, 128, 30);
 }
+
+.bg-login{
+  position: absolute;
+  z-index: -100;
+  right: 0;
+  top: 0;
+  opacity: 0.6;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

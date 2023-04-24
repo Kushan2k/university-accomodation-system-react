@@ -69,10 +69,10 @@ export default function Main() {
         <div className="col-12 colored-box position-relative col-md-6 m-0 p-0 d-flex align-items-center justify-content-around" style={{
           backgroundColor:'#70b359'
         }}>
-          <img className='w-75' src="https://media.istockphoto.com/id/579774164/photo/cheerful-group-of-friends.jpg?s=612x612&w=0&k=20&c=CWUpQIT9RbDEIesRTHQgUhAOFue-3UaFJm7p5r-GNEk=" alt="group" />
-          {/* <img className='w-75' src="../../Assets/Image/medical students.jpg" alt="group" /> */}
+          {/* <img className='w-75' src="https://media.istockphoto.com/id/579774164/photo/cheerful-group-of-friends.jpg?s=612x612&w=0&k=20&c=CWUpQIT9RbDEIesRTHQgUhAOFue-3UaFJm7p5r-GNEk=" alt="group" /> */}
+          <img className='w-75' src="https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img/https://www.kms.de/wp-content/uploads/elementor/thumbs/Diversidad-pp8qq9uewt6eo33kt3avrl7j3ya4d83kl089q79jhs.jpg" alt="group" />
 
-          <h1 className='text-white position-absolute overlay-text'>we provid <br/>the best stay</h1>
+          <h1 className='text-white position-absolute overlay-text '>we provid <br/>the best stay</h1>
         </div>
 
         <div className="col-12 colored-box col-md-6 m-0 px-5  d-flex justify-content-center align-items-center  flex-column" style={{
@@ -101,7 +101,8 @@ export default function Main() {
         </div>
 
         <div className="col-12  colored-box col-md-6 m-0 p-0 bg-dark overflow-hidden" >
-          <img className='box-4-img' src="https://media.istockphoto.com/id/866754354/photo/different-lifestyles-concept.jpg?s=170667a&w=0&k=20&c=DpK6y3Y0WJV6wMdU25mZ-A2Hl6_X0UfN4qx5WnGULAM=" alt="bg" />
+          <img className='box-4-img' 
+          src="https://st3.depositphotos.com/3287005/18042/v/1600/depositphotos_180428436-stock-illustration-happy-group-students-books-isolated.jpg" alt="bg" />
         </div>
       </div>
 
